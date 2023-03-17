@@ -4,11 +4,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+<<<<<<< HEAD
         punto7();
 
+=======
+        punto15(46);
+>>>>>>> c48ae2baaf068c75fe3e8501cf71961d9f50609d
     }
 
-    /// PUNTO 1
     public static void punto1a() {
 
         int acum = 0;
@@ -123,8 +126,11 @@ public class Main {
             }
             number++;
         }
+
+
     }
 
+<<<<<<< HEAD
     public static void punto7() {
 
         System.out.println("punto 7: \n");
@@ -163,5 +169,91 @@ public class Main {
         }
     }
 
+=======
+    public static void punto8() {
+        Scanner scan = new Scanner(System.in);
+        boolean flag = true;
+        int number;
+        String answer;
+        int cont = 0;
+
+        do {
+            System.out.println("\nIngresa un numero por favor: ");
+            number = scan.nextInt();
+            if (number > 0) {
+                cont++;
+            }
+
+            System.out.println("\nDeseas seguir ingresando numeros? (s/n): ");
+            answer = scan.next();
+            // System.out.println("\nanswer: " + answer);
+
+            if (answer.equals("n")) {
+                flag = false;
+                scan.close();
+            }
+
+        } while (flag);
+
+        System.out.println("La cantidad de numeros positivios ingresados fue " + cont);
+    }
+
+    public static void punto9(int year) {
+        if (year % 4 == 0) {
+            System.out.println("\nEl año " + year + " es año bisiesto");
+        } else {
+            System.out.println("\nEl año " + year + " no es año bisiesto");
+        }
+    }
+
+    public static void punto10(char C) {
+        System.out.println("El valor ASCII de " + C + " es: " + ((int) C));
+    }
+
+    public static int punto11(int n1, int n2) {
+        int result = n1 * n2;
+        System.out.println("El resultado de la multiplicación es: " + result);
+
+        return result;
+    }
+
+    public static void punto12() {
+        Scanner scan = new Scanner(System.in);
+        boolean flag = true;
+        String answer = "";
+
+        do {
+            System.out.println("Opciones disponibles: (cuadrado, triangulo, circulo)");
+            System.out.println("Que area deseas calcular?:");
+            answer = scan.next();
+            if (answer.equals("cuadrado") || answer.equals("triangulo") || answer.equals("circulo")) {
+                flag = false;
+            } else {
+                System.out.println("\nDebes ingresar una opcion valida! :( \n");
+            }
+        } while (flag);
+
+        System.out.println("\nOpción selecionada: " + answer);
+
+    }
+
+    public static void punto13(String str) {
+        System.out.println("Good morning " + str + "!");
+    }
+
+    public static void punto14(int number) {
+        System.out.println("El numero elegido es: " + number + ", su doble es: " + (number*2) + " y su triple es: " + (number*3));
+    }
+
+    public static void punto15(int degrees) {
+        //  F = 32 + ( 9 * C / 5)
+        float centigrades = ((float)degrees - 32) * 5/9;
+        System.out.println(degrees + " grados Farenheit equivalen a " + centigrades + "grados Celcius");
+    }
+
+    public static void punto16(float radio) {
+
+    }
+>>>>>>> c48ae2baaf068c75fe3e8501cf71961d9f50609d
 
 }
