@@ -9,20 +9,27 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         punto1();
-        punto2();
-        punto3();
+        //punto2();
+        //punto3();
     }
 
     public static void punto1() {
         CuentaBancaria Jorge = new CuentaBancaria(5000, "Jorge Jejinho");
         System.out.println(Jorge.getTitular());
-        Jorge.establecerPlazoFijo();
+        double interes = Jorge.getInteres();
+        System.out.println("El interes es de " + interes + "%");
+        String plazoFijo = Jorge.establecerPlazoFijo();
+        System.out.println(plazoFijo);
     }
 
     public static void punto2() {
         Vuelo Aero1 = new Vuelo("Mar del plata", "Buenos Aires", LocalTime.of(13, 30), LocalTime.of(21, 00));
-        Aero1.getInformacionVuelo();
-        Aero1.getDuracionVuelo();
+
+        String informacion = Aero1.informacionVuelo();
+        String duracion = Aero1.duracionVuelo();
+
+        System.out.println(informacion);
+        System.out.println(duracion);
     }
 
     public static void punto3() {

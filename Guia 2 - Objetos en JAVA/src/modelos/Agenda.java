@@ -1,5 +1,8 @@
 package modelos;
 
+/// En este caso utilizo System.out.println() dentro de metodos de la clase, esto no debe hacerse.
+/// Deberia modularizar mas los metodos para no usar estas llamadas al sistema en el objeto, pero eso implicaria complejizar la logica
+
 public class Agenda {
     private String nombreAgenda;
     private Contacto[] contactos = new Contacto[20];
@@ -13,7 +16,7 @@ public class Agenda {
         Contacto nuevoContacto;
         nuevoContacto = new Contacto(nombre, numTelefono, correo);
 
-        contactos[validos] = nuevoContacto;
+        contactos[this.validos] = nuevoContacto;
         this.validos++;
     }
 
@@ -21,10 +24,10 @@ public class Agenda {
         boolean flag = false;
         int indice = 0;
 
-        for(int i = 0; i < validos ; i++) {
-            if((contactos[i].getNombre()).equals(nombre)) {
+        for (int i = 0; i < this.validos; i++) {
+            if ((contactos[i].getNombre()).equals(nombre)) {
                 System.out.println("Se ha encontrado el contacto!");
-                mostrarContacto(i);
+                System.out.println(mostrarContacto(i));
                 indice = i;
                 flag = true;
                 break;
@@ -38,20 +41,20 @@ public class Agenda {
         return indice;
     }
 
-    public void mostrarContacto(int indice) {
-        System.out.println("Nombre: " + contactos[indice].getNombre());
-        System.out.println("Correo Electronico: " + contactos[indice].getEmail());
-        System.out.println("Numero de Telefono: " + contactos[indice].getNumeroTelefono());
+    public String mostrarContacto(int indice) {
+        return "Nombre: " + contactos[indice].getNombre() + "Correo Electronico: " + contactos[indice].getEmail() + "Numero de Telefono: " + contactos[indice].getNumeroTelefono();
 
     }
-    public void eliminarContacto(String nombre) {
-       int indice = buscarContacto(nombre);
 
-       for(int i = indice; i < validos; i++) {
-           contactos[i] = contactos[i+1];
-       }
-       this.validos--;
-       System.out.println("Contacto eliminado con exito!");
+    public void eliminarContacto(String nombre) {
+        int indice = buscarContacto(nombre);
+
+        for (int i = indice; i < this.validos; i++) {
+            contactos[i] = contactos[i + 1];
+        }
+        this.validos--;
+
+        System.out.println("Contacto eliminado con exito!");
     }
 
     public void editarContacto(String nombre, Contacto nuevoContacto) {

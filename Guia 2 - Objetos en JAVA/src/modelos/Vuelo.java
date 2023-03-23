@@ -1,15 +1,17 @@
 package modelos;
 
 import java.time.Duration;
-import java.time.format.DateTimeFormatter;
 import java.time.LocalTime;
 
 // PREGUNTA: Es correcto utilizar el prefijo get pese a no estar obteniendo un atributo en si?
+// RESPUESTA: No, no es correcto. Podria llegar a confundir a otro programador si ve nuestro codigo.
+
 public class Vuelo {
     private String origen;
     private String destino;
     private LocalTime horaSalida;
     private LocalTime horaLlegada;
+
     public Vuelo(String origen, String destino, LocalTime horaSalida, LocalTime horaLlegada) {
         this.origen = origen;
         this.destino = destino;
@@ -17,18 +19,19 @@ public class Vuelo {
         this.horaLlegada = horaLlegada;
     }
 
-    public void getInformacionVuelo() {
-        System.out.println("El origen del vuelo es: " + origen);
-        System.out.println("El destino del vuelo es: " + destino);
-        System.out.println("La hora de salida es: " + horaSalida);
-        System.out.println("La hora de llegada es: " + horaLlegada);
+    /// Retorna la informacion del vuelo (origen, destino, hora de salida, hora de llegada)
+    public String informacionVuelo() {
+        return "\nEl origen del vuelo es: " + origen + "\nEl destino del vuelo es: " + destino + "\nLa hora de salida es: " + horaSalida + "\nLa hora de llegada es: " + horaLlegada;
     }
 
-    public void getDuracionVuelo() {
+    /// Retorna la duracion del vuelo
+    public String duracionVuelo() {
+
         Duration duracion = Duration.between(horaSalida, horaLlegada);
+
         double horas = duracion.toHours();
         double minutos = duracion.toMinutes() % 60;
 
-        System.out.println("La duracion del vuelo es de " + horas + " horas y " + minutos + " minutos");
+        return "La duracion del vuelo es de " + horas + " horas y " + minutos + " minutos";
     }
 }
