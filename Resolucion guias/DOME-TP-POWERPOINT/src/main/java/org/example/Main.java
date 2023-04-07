@@ -35,7 +35,9 @@ public class Main {
             System.out.println("4-Encontrar todos los DVDs de un director.");
             System.out.println("5-Ver todos los CDs");
             System.out.println("6-Ver todos los DVDs");
-            System.out.println("7-Terminar ejecucion");
+            System.out.println("7-Remover un DVD/CD");
+            System.out.println("8-Prestar/Devolver un DVD/CD");
+            System.out.println("9-Terminar ejecucion");
             System.out.print("Selecciona una opcion: ");
 
             opcion = scan.next();
@@ -102,8 +104,38 @@ public class Main {
                     verTodosLosDVDs(elementos);
                     break;
                 case "7":
+                    System.out.print("Ingrese el titulo del CD/DVD a remover: ");
+                    scan.nextLine();
+                    String remover = scan.nextLine();
+                    for (Elemento elemento : elementos) {
+                        if (elemento.getTitulo().equals(remover)) {
+                            elementos.remove(elemento);
+                            System.out.println("Elemento removido con exito");
+                            break;
+                        }
+                    }
+                    break;
+                case "8":
+                    System.out.print("Ingrese el titulo del CD/DVD a PRESTAR/DEVOLVER: ");
+                    scan.nextLine();
+                    String prestar = scan.nextLine();
+                    for (Elemento elemento : elementos) {
+                        if (elemento.getTitulo().equals(prestar)) {
+                            if (elemento.isLoTengo()) {
+                                elemento.setLoTengo(false);
+                            } else {
+                                elemento.setLoTengo(true);
+                            }
+
+                            System.out.println("Elemento PRSTADO/DEVUELTO con exito");
+                            break;
+                        }
+                    }
+                    break;
+                case "9":
                     flag = false;
                     break;
+
                 default:
                     System.out.println("Opcion no valida!");
             }
@@ -112,12 +144,12 @@ public class Main {
     }
 
     public static List<Elemento> cargarInformacionTesteo(List<Elemento> elementos) {
-        DVD dummy1 = new DVD("El amanecer de los monos", "23:56", "Monardos","Steven Spilberg");
-        DVD dummy2 = new DVD("Cactus en llamas", "12:20", "Muy caliente","Albert Tesla");
-        DVD dummy3 = new DVD("Perro o Gato?", "56:50", "Guau!","director");
-        CD dummy4 = new CD("Besos en la Espalda","50:00", "www.records.com", "Indios",12);
-        CD dummy5 = new CD("Bohemian Rhapsody","56:15", "www.records.com", "Queen",12);
-        CD dummy6 = new CD("The Beatles","38:30", "www.records.com", "The Beatles",12);
+        DVD dummy1 = new DVD("El amanecer de los monos", "23:56", "Monardos", "Steven Spilberg");
+        DVD dummy2 = new DVD("Cactus en llamas", "12:20", "Muy caliente", "Albert Tesla");
+        DVD dummy3 = new DVD("Perro o Gato?", "56:50", "Guau!", "director");
+        CD dummy4 = new CD("Besos en la Espalda", "50:00", "www.records.com", "Indios", 12);
+        CD dummy5 = new CD("Bohemian Rhapsody", "56:15", "www.records.com", "Queen", 12);
+        CD dummy6 = new CD("The Beatles", "38:30", "www.records.com", "The Beatles", 12);
 
         elementos.add(dummy1);
         elementos.add(dummy5);
@@ -140,6 +172,7 @@ public class Main {
             }
         }
     }
+
     public static void buscarPorDirector(List<Elemento> elementos, String director) {
         System.out.println("-----------------  BUSCAR POR DIRECTOR  -----------------");
         for (Elemento elemento : elementos) {
@@ -156,7 +189,7 @@ public class Main {
         System.out.println("-----------------  LISTA CDs   -----------------");
         for (Elemento elemento : elementos) {
             if (elemento instanceof CD) {
-                    System.out.println(((CD) elemento).imprimir());
+                System.out.println(((CD) elemento).imprimir());
             }
         }
     }

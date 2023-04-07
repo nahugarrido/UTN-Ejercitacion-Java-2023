@@ -45,6 +45,7 @@ public abstract class Elemento {
         this.loTengo = loTengo;
     }
 
+
     public String getComentario() {
         return comentario;
     }
