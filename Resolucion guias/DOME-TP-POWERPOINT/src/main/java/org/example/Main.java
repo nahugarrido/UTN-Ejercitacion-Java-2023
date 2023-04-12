@@ -161,7 +161,9 @@ public class Main {
 
             if (elemento instanceof CD) {
                 if (((CD) elemento).getInterprete().equals(interprete)) {
-                    System.out.println(((CD) elemento).imprimir());
+                    System.out.println("Prueba instancia de CD");
+                    System.out.println(elemento.imprimir());
+//                  System.out.println(((CD) elemento).imprimir());
                 }
             }
         }

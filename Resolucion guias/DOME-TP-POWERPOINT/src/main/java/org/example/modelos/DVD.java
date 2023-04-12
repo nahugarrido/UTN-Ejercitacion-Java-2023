@@ -14,6 +14,6 @@ public class DVD extends Elemento {
 
     @Override
     public String imprimir() {
-        return "DVD: " + this.getTitulo() + ", director: " + this.getDirector() + ", comentario: " + this.getComentario() + ", loTengo: " + this.isLoTengo();
+        return "DVD: " + super.getTitulo() + ", director: " + this.getDirector() + ", comentario: " + super.getComentario() + ", loTengo: " + super.isLoTengo();
     }
 }

@@ -20,6 +20,6 @@ public class CD extends Elemento {
 
     @Override
     public String imprimir() {
-        return "CD: " + ", titulo: " + this.getTitulo() + ", interprete: " + this.getInterprete() + ", numeroDeTemas: " + this.getNumeroDeTemas() + ", loTengo: " + this.isLoTengo();
+        return "CD: " + ", titulo: " + super.getTitulo() + ", interprete: " + this.getInterprete() + ", numeroDeTemas: " + this.getNumeroDeTemas() + ", loTengo: " + super.isLoTengo();
     }
 }
