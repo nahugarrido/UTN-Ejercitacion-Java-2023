@@ -1,0 +1,42 @@
+Empleado --> Vendedores
+	 --> Administradores
+
+Atributos de Empleados:
+legajo
+nombre
+apellido
+direccion
+fecha de nacimiento
+
+Atributos de Vendedores
+monto de venta mensual
+
+Atributos de Administrador
+area
+
+Clase envoltorio
+lista de empleados
+metodos:
+agregar()
+buscarPorLegajo()
+contarEmpleados();
+devolverListado();
+eliminarPorLegajo();
+###calcultarSueldo();
+
+interfaz sueldos...
+cobrarSueldo();
+
+Atributos de Repartidor:
+....
+
+
+
+
+
+
+
+
+
+
+
