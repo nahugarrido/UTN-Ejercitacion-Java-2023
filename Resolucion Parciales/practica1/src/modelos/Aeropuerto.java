@@ -8,13 +8,14 @@ public class Aeropuerto {
     private String codigoInternacional;
     private String direccion;
     private int cantidadOperativa;
-    private List<Hangar> hangares = new ArrayList();
+    private List<Hangar> hangares;
 
     public Aeropuerto(String nombre, String codigoInternacional, String direccion, int cantidadOperativa) {
         this.nombre = nombre;
         this.codigoInternacional = codigoInternacional;
         this.direccion = direccion;
         this.cantidadOperativa = cantidadOperativa;
+        this.hangares = new ArrayList();
     }
 
     public String getNombre() {

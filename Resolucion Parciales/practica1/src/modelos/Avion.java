@@ -8,6 +8,8 @@ public class Avion {
     private int cantidadAsientos;
     private boolean isPrivado;
 
+    private boolean isVolando;
+
     public Avion(String modelo, String marca, double capacidadCombustible, String tipoMotor, int cantidadAsientos, boolean isPrivado) {
         this.modelo = modelo;
         this.marca = marca;
@@ -15,10 +17,21 @@ public class Avion {
         this.tipoMotor = tipoMotor;
         this.cantidadAsientos = cantidadAsientos;
         this.isPrivado = isPrivado;
+        this.isVolando = false;
     }
 
     public String despegar() {
-        return "El avion" + this.get
+        this.setVolando(true);
+        return "El avion marca: " + this.getMarca() + " y modelo: " + this.getModelo() + " ha despegado correctamente";
+    }
+
+    public String aterrizar() {
+        this.setVolando(false);
+        return "El avion marca: " + this.getMarca() + " y modelo: " + this.getModelo() + " ha aterrizado correctamente";
+    }
+
+    public String volar() {
+        return "Fiummmmm ¡Este avion esta volando!";
     }
 
     public String getModelo() {
@@ -43,5 +56,13 @@ public class Avion {
 
     public boolean isPrivado() {
         return isPrivado;
+    }
+
+    public boolean isVolando() {
+        return isVolando;
+    }
+
+    public void setVolando(boolean volando) {
+        isVolando = volando;
     }
 }

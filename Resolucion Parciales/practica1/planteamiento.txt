@@ -2,7 +2,8 @@ Clase Aeropuerto:
 Atributos de Aeropuerto:
 nombre, codigo internacional, direccion, capacidad de operacion.
 Lista de hangares
-
+Metodo:
+agregarAvion
 
 
 Clase hangar
@@ -50,3 +51,7 @@ Metodos de militar: INTERFAZ?
 metodoParaCargar retorna verdadero / falso
 
 
+
+Tengo una interfaz ICarga con un metodo cargar
+
+Ese metodo se va a implementar

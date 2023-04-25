@@ -1,4 +1,3 @@
 La consigna dice que cada clase debe sobreescribir su toString y su equals
-las clases abstractas, envolventes deben tener su toString y su equals?
+las clases abstractas, envolventes deben tener su equals?
 
-si hago un @Override y no implemento nada, eso reemplaza a la implementacion del padre?
