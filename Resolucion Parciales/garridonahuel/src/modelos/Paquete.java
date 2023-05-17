@@ -7,12 +7,8 @@ public abstract class Paquete implements GestionarCostos {
     private double peso;
     private String destino;
     private boolean estaEnviado;
-
     private boolean seguroEnvios;
     private boolean entregaMismoDia;
-    private boolean almacenamiento;
-    private boolean recoleccion;
-    private boolean seguimiento;
     protected double tarifaEnvio;
     protected double costosAdicionales;
     protected double total;
