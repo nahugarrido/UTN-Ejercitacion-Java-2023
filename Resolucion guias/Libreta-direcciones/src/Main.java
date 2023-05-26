@@ -55,7 +55,7 @@ public class Main {
                 case "5":
                     System.out.println("Buscar contacto: INEXISTENTE");
                     try {
-                        System.out.println(libreta.buscarContacto("INEXISTENTE"));
+                        System.out.println(libreta.buscarContacto("Juanito"));
                     } catch (RuntimeException e) {
                         System.out.println(e);
                     }
@@ -63,7 +63,7 @@ public class Main {
                 case "6":
                     System.out.println("Eliminar contacto: INEXISTENTE");
                     try {
-                        System.out.println(libreta.borrarContacto("INEXISTENTE"));
+                        System.out.println(libreta.borrarContacto("Juanito"));
                     } catch (Exception e) {
                         System.out.println(e);
                     }
