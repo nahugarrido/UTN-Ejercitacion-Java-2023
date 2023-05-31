@@ -13,7 +13,6 @@ public class Main {
 
         try {
             /// Primera conexion a la api para obtener cantidad de paginas
-
             JSONObject jsonObject = new JSONObject(ConsumoAPI.getInfo());
             JSONObject json_info = jsonObject.getJSONObject("info");
             int contPages = json_info.getInt("pages");

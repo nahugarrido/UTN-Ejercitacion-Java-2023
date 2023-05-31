@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ConsumoAPI {
 
-    public static String apiURL = "https://rickandmortyapi.com/api/character/";
+    public static String apiURL = "https://archive-api.open-meteo.com/v1/archive?latitude=-38.00&longitude=-57.56&start_date=2022-06-01&end_date=2022-06-01&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,precipitation,rain,weathercode&daily=weathercode,apparent_temperature_max,apparent_temperature_min,apparent_temperature_mean&timezone=America%2FSao_Paulo";
 
     public static String getInfo() {
         try {
