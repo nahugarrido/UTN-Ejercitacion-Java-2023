@@ -4,12 +4,19 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Main {
     public static void main(String[] args) {
 
         ArrayList<Personaje> listaPersonajes = new ArrayList<>();
+
+        List<Object> listaRead = FileWriterUtil.readFromFile("listaDePersonajes");
+        for(int i = 0; i < listaRead.size(); i++) {
+            System.out.println(listaRead.get(i));
+        }
+/*
 
         try {
             /// Primera conexion a la api para obtener cantidad de paginas
@@ -35,7 +42,9 @@ public class Main {
             }
 
             /// escribir archivo
-            /*FileWriterUtil.writeToFile(new ArrayList[]{listaPersonajes}, "listaDePersonajes");*/
+            */
+/*FileWriterUtil.writeToFile(new ArrayList[]{listaPersonajes}, "listaDePersonajes");*//*
+
 
             System.out.println("Lista de personajes------------");
             for(Personaje item : listaPersonajes) {
@@ -46,5 +55,6 @@ public class Main {
         } catch (JSONException e) {
             System.out.println("Error en json o conexion a api: " + e.getMessage());
         }
-    }
+*/    }
+
 }
