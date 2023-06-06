@@ -2,7 +2,7 @@ package modelos;
 
 import java.util.Objects;
 
-public class Animal {
+public class Animal implements Comparable{
     private String nombre;
 
     public Animal(String nombre) {
@@ -35,5 +35,10 @@ public class Animal {
 
     public String getNombre() {
         return nombre;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }
