@@ -1,8 +1,9 @@
 package modelos;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Persona implements Comparable<Persona> {
+public class Persona implements Comparable<Persona>, Serializable {
     private String nombre;
     private int edad;
 

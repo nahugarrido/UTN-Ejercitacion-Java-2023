@@ -1,5 +1,6 @@
 package modelos;
 
+import java.io.*;
 import java.util.ArrayList;
 
 public class ControladorLista {
@@ -22,6 +23,22 @@ public class ControladorLista {
         for (Persona persona : listaPersonas) {
             texto.append(persona.toString()).append("\n");
         }
+        return texto.toString();
+    }
+
+    public void crearArchivoPersonas() {
+        Serializar serializar = new Serializar();
+        serializar.serializar(listaPersonas, "listaPersonas.bin");
+    }
+
+    public String leerArchivoPersonas() {
+        Serializar serializar = new Serializar();
+        ArrayList<Persona> listaNueva = serializar.deserializar("listaPersonas.bin");
+        StringBuilder texto = new StringBuilder();
+        for(Persona persona : listaNueva) {
+            texto.append(persona.toString()).append("\n");
+        }
+
         return texto.toString();
     }
 

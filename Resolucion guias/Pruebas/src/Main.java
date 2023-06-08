@@ -2,6 +2,10 @@ import excepciones.PersonaNoEncontradaException;
 import excepciones.PersonaYaExisteException;
 import modelos.*;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class Main {
     public static void main(String[] args) {
         Persona persona1 = new Persona("Juan Carlos", 20);
@@ -76,6 +80,14 @@ public class Main {
         } finally {
             System.out.println(controladoraTreeMap.mostrarPersonas());
         }
+
+        System.out.println("ARCHIVO LISTA:");
+        controladoraLista.crearArchivoPersonas();
+        System.out.println(controladoraLista.leerArchivoPersonas());
+
+        System.out.println("ARCHIVO HASHMAP:");
+        controladoraHashMap.crearArchivoPersonas();
+        System.out.println(controladoraHashMap.leerArchivoPersonas());
 
 
     }

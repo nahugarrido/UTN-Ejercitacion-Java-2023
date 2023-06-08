@@ -39,4 +39,19 @@ public class ControladoraHashMap {
 
         return texto.toString();
     }
+
+    public void crearArchivoPersonas() {
+        Serializar serializar = new Serializar();
+        serializar.serializar(personaHashMap, "hashMapPersonas.bin");
+    }
+
+    public String leerArchivoPersonas() {
+        Serializar serializar = new Serializar();
+        HashMap<String, Persona> hashMapNuevo = serializar.deserializar("hashMapPersonas.bin");
+        StringBuilder texto = new StringBuilder();
+        for (Map.Entry<String, Persona> persona : hashMapNuevo.entrySet()) {
+            texto.append(persona.toString()).append("\n");
+        }
+        return texto.toString();
+    }
 }
